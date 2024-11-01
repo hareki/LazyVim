@@ -92,7 +92,7 @@ return {
       -- },
       -- { "<leader>/", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
       -- { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
-      { "<leader><space>", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
+      { "<leader><space>", LazyVim.pick("files"), desc = "Find Files" },
       -- find
       { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
       { "<leader>fc", LazyVim.pick.config_files(), desc = "Find Config File" },

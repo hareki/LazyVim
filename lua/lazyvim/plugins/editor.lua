@@ -19,8 +19,8 @@ return {
         end,
         desc = "Explorer NeoTree (cwd)",
       },
-      { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
-      { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
+      { "<leader>e", "<leader>fe", desc = "Explorer NeoTree", remap = true },
+      -- { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
       {
         "<leader>ge",
         function()
@@ -215,13 +215,13 @@ return {
       },
     },
     keys = {
-      {
-        "<leader>?",
-        function()
-          require("which-key").show({ global = false })
-        end,
-        desc = "Buffer Keymaps (which-key)",
-      },
+      -- {
+      --   "<leader>?",
+      --   function()
+      --     require("which-key").show({ global = false })
+      --   end,
+      --   desc = "Buffer Keymaps (which-key)",
+      -- },
       {
         "<c-w><space>",
         function()
