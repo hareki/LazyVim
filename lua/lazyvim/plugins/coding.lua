@@ -87,13 +87,13 @@ return {
     "nvim-cmp",
     optional = true,
     dependencies = {
-      {
-        "garymjr/nvim-snippets",
-        opts = {
-          friendly_snippets = true,
-        },
-        dependencies = { "rafamadriz/friendly-snippets" },
-      },
+      -- {
+      --   "garymjr/nvim-snippets",
+      --   opts = {
+      --     friendly_snippets = true,
+      --   },
+      --   dependencies = { "rafamadriz/friendly-snippets" },
+      -- },
     },
     opts = function(_, opts)
       opts.snippet = {
@@ -149,11 +149,11 @@ return {
   },
 
   -- comments
-  {
-    "folke/ts-comments.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
+  -- {
+  --   "folke/ts-comments.nvim",
+  --   event = "VeryLazy",
+  --   opts = {},
+  -- },
 
   -- Better text-objects
   {

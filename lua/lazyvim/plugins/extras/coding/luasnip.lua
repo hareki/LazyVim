@@ -6,12 +6,12 @@ return {
         and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
       or nil,
     dependencies = {
-      {
-        "rafamadriz/friendly-snippets",
-        config = function()
-          require("luasnip.loaders.from_vscode").lazy_load()
-        end,
-      },
+      -- {
+      --   "rafamadriz/friendly-snippets",
+      --   config = function()
+      --     require("luasnip.loaders.from_vscode").lazy_load()
+      --   end,
+      -- },
       {
         "nvim-cmp",
         dependencies = {
@@ -47,8 +47,8 @@ return {
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
   },
-  {
-    "garymjr/nvim-snippets",
-    enabled = false,
-  },
+  -- {
+  --   "garymjr/nvim-snippets",
+  --   enabled = false,
+  -- },
 }
