@@ -124,7 +124,7 @@ return {
 
   -- Linters & formatters
   {
-    "williamboman/mason.nvim",
+    "hareki/mason.nvim",
     opts = { ensure_installed = { "sqlfluff" } },
   },
   {
