@@ -22,7 +22,7 @@ return {
       },
       setup = {
         eslint = function()
-          if not auto_format then
+          if true then
             return
           end
 
