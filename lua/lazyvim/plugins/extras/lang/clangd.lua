@@ -114,7 +114,7 @@ return {
     optional = true,
     dependencies = {
       -- Ensure C/C++ debugger is installed
-      "williamboman/mason.nvim",
+      "hareki/mason.nvim",
       optional = true,
       opts = { ensure_installed = { "codelldb" } },
     },

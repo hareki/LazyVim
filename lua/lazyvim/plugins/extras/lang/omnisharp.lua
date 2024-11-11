@@ -36,7 +36,7 @@ return {
     },
   },
   {
-    "williamboman/mason.nvim",
+    "hareki/mason.nvim",
     opts = { ensure_installed = { "csharpier", "netcoredbg" } },
   },
   {
