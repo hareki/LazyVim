@@ -75,6 +75,10 @@ function M.open(file, opts)
   Snacks.config.style("news", {
     width = 0.6,
     height = 0.6,
+    backdrop = 100,
+    title = " LazyVim Changelog ",
+    title_pos = "center",
+    border = "rounded",
     wo = {
       spell = false,
       wrap = false,
