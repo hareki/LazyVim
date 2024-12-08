@@ -10,29 +10,29 @@ return {
         function()
           require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root() })
         end,
-        desc = "Explorer NeoTree (Root Dir)",
+        desc = "Explorer Neo-tree (root dir)",
       },
       {
         "<leader>fE",
         function()
           require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
         end,
-        desc = "Explorer NeoTree (cwd)",
+        desc = "Explorer Neo-tree (cwd)",
       },
-      { "<leader>e", "<leader>fe", desc = "Explorer NeoTree", remap = true },
+      { "<leader>e", "<leader>fe", desc = "Explorer Neo-tree", remap = true },
       {
         "<leader>ge",
         function()
           require("neo-tree.command").execute({ source = "git_status", toggle = true })
         end,
-        desc = "Git Explorer",
+        desc = "Git explorer",
       },
       {
         "<leader>be",
         function()
           require("neo-tree.command").execute({ source = "buffers", toggle = true })
         end,
-        desc = "Buffer Explorer",
+        desc = "Buffer explorer",
       },
     },
     deactivate = function()
@@ -76,13 +76,13 @@ return {
               local path = node:get_id()
               vim.fn.setreg("+", path, "c")
             end,
-            desc = "Copy Path to Clipboard",
+            desc = "Copy path to clipboard",
           },
           ["O"] = {
             function(state)
               require("lazy.util").open(state.tree:get_node().path, { system = true })
             end,
-            desc = "Open with System Application",
+            desc = "Open with system application",
           },
           ["P"] = { "toggle_preview", config = { use_float = false } },
         },
@@ -179,7 +179,7 @@ return {
       spec = {
         {
           mode = { "n", "v" },
-          { "<leader><tab>", group = "tabs" },
+          { "<leader><tab>", group = "Tabs" },
           { "<leader>c", group = "Code" },
           { "<leader>f", group = "File/Find" },
           { "<leader>g", group = "Git" },
@@ -209,7 +209,7 @@ return {
             end,
           },
           -- better descriptions
-          { "gx", desc = "Open with system app" },
+          { "gx", desc = "Open with system application" },
         },
       },
     },
