@@ -188,7 +188,7 @@ return {
           { "<leader>s", group = "Search" },
           { "<leader>u", group = "UI", icon = { icon = "󰙵 ", color = "cyan" } },
           { "<leader>x", group = "Diagnostics/Quickfix", icon = { icon = "󱖫 ", color = "green" } },
-          { "[", group = "Prev" },
+          { "[", group = "Previous" },
           { "]", group = "Next" },
           { "g", group = "Goto" },
           { "gs", group = "Surround" },
@@ -275,7 +275,7 @@ return {
           else
             gs.nav_hunk("prev")
           end
-        end, "Prev Hunk")
+        end, "Previous Hunk")
         map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
         map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
         map({ "n" }, "<leader>ghs", gs.stage_hunk, "Stage Hunk")
