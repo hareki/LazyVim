@@ -25,8 +25,8 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window w
 -- buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
-map("n", "[b", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
-map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
+map("n", "[b", "<cmd>bprevious<cr>", { desc = "Buffer" })
+map("n", "]b", "<cmd>bnext<cr>", { desc = "Buffer" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to other buffer" })
 map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to other buffer" })
 map("n", "<leader>bd", function()
@@ -80,8 +80,8 @@ map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location list" })
 map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix list" })
 
-map("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
-map("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
+map("n", "[q", vim.cmd.cprev, { desc = "Quickfix" })
+map("n", "]q", vim.cmd.cnext, { desc = "Quickfix" })
 
 -- formatting
 map({ "n", "v" }, "<leader>cf", function()
@@ -97,12 +97,12 @@ local diagnostic_goto = function(next, severity)
   end
 end
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line diagnostics" })
-map("n", "]d", diagnostic_goto(true), { desc = "Next diagnostic" })
-map("n", "[d", diagnostic_goto(false), { desc = "Previous diagnostic" })
-map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next error" })
-map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Previous error" })
-map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next warning" })
-map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Previous warning" })
+map("n", "]d", diagnostic_goto(true), { desc = "Diagnostic" })
+map("n", "[d", diagnostic_goto(false), { desc = "Diagnostic" })
+map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Error" })
+map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Error" })
+map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Warning" })
+map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Warning" })
 
 -- stylua: ignore start
 

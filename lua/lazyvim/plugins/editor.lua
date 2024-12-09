@@ -268,14 +268,14 @@ return {
           else
             gs.nav_hunk("next")
           end
-        end, "Next Hunk")
+        end, "Hunk")
         map("n", "[h", function()
           if vim.wo.diff then
             vim.cmd.normal({ "[c", bang = true })
           else
             gs.nav_hunk("prev")
           end
-        end, "Previous Hunk")
+        end, "Hunk")
         map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
         map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
         map({ "n" }, "<leader>ghs", gs.stage_hunk, "Stage Hunk")
@@ -337,7 +337,7 @@ return {
             end
           end
         end,
-        desc = "Previous Trouble/Quickfix Item",
+        desc = "Trouble/Quickfix Item",
       },
       {
         "]q",
@@ -351,7 +351,7 @@ return {
             end
           end
         end,
-        desc = "Next Trouble/Quickfix Item",
+        desc = "Trouble/Quickfix Item",
       },
     },
   },
@@ -365,8 +365,8 @@ return {
     opts = {},
     -- stylua: ignore
     keys = {
-      { "]t", function() require("todo-comments").jump_next() end, desc = "Next Todo Comment" },
-      { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous Todo Comment" },
+      { "]t", function() require("todo-comments").jump_next() end, desc = "Todo Comment" },
+      { "[t", function() require("todo-comments").jump_prev() end, desc = "Todo Comment" },
       { "<leader>xt", "<cmd>Trouble todo toggle<cr>", desc = "Todo (Trouble)" },
       { "<leader>xT", "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
       { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
