@@ -124,8 +124,6 @@ Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and 
 Snacks.toggle.option("showtabline", { off = 0, on = vim.o.showtabline > 0 and vim.o.showtabline or 2, name = "tabline" }):map("<leader>uA")
 Snacks.toggle.treesitter():map("<leader>uT")
 Snacks.toggle.option("background", { off = "light", on = "dark" , name = "dark background" }):map("<leader>ub")
-Snacks.toggle.profiler():map("<leader>dpp")
-Snacks.toggle.profiler_highlights():map("<leader>dph")
 
 if vim.lsp.inlay_hint then
   Snacks.toggle.inlay_hints():map("<leader>uh")
