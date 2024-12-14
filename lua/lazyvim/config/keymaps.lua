@@ -22,14 +22,6 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
--- Move Lines
-map("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move down" })
-map("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move up" })
-map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
-map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
-map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move down" })
-map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move up" })
-
 -- buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
@@ -76,9 +68,6 @@ map("i", ";", ";<c-g>u")
 
 -- save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
-
--- keywordprg
-map("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
 
 -- better indenting
 map("v", "<", "<gv")
@@ -135,10 +124,6 @@ Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and 
 Snacks.toggle.option("showtabline", { off = 0, on = vim.o.showtabline > 0 and vim.o.showtabline or 2, name = "tabline" }):map("<leader>uA")
 Snacks.toggle.treesitter():map("<leader>uT")
 Snacks.toggle.option("background", { off = "light", on = "dark" , name = "dark background" }):map("<leader>ub")
-Snacks.toggle.dim():map("<leader>uD")
-Snacks.toggle.animate():map("<leader>ua")
-Snacks.toggle.indent():map("<leader>ug")
-Snacks.toggle.scroll():map("<leader>uS")
 Snacks.toggle.profiler():map("<leader>dpp")
 Snacks.toggle.profiler_highlights():map("<leader>dph")
 
@@ -183,7 +168,7 @@ map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
 -- windows
 map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
-map("n", "<leader>-", "<C-W>s", { desc = "Split window below", remap = true })
+map("n", "<leader>_", "<C-W>s", { desc = "Split window below", remap = true })
 map("n", "<leader>|", "<C-W>v", { desc = "Split window right", remap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete window", remap = true })
 Snacks.toggle.zoom():map("<leader>wm"):map("<leader>uZ")

@@ -20,7 +20,6 @@ return {
         desc = "Explorer Neo-tree (cwd)",
       },
       { "<leader>e", "<leader>fe", desc = "Explorer Neo-tree (root dir)", remap = true },
-      { "<leader>E", "<leader>fE", desc = "Explorer Neo-tree (cwd)", remap = true },
       {
         "<leader>ge",
         function()
@@ -199,14 +198,14 @@ return {
           { "z", group = "Fold" },
           {
             "<leader>b",
-            group = "buffer",
+            group = "Buffer",
             expand = function()
               return require("which-key.extras").expand.buf()
             end,
           },
           {
             "<leader>w",
-            group = "windows",
+            group = "Windows",
             proxy = "<c-w>",
             expand = function()
               return require("which-key.extras").expand.win()
