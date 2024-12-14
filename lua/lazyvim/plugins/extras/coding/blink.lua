@@ -22,7 +22,6 @@ return {
       "sources.default",
     },
     dependencies = {
-      "rafamadriz/friendly-snippets",
       -- add blink.compat to dependencies
       {
         "saghen/blink.compat",
