@@ -2,7 +2,7 @@ return {
 
   -- Ensure GitUI tool is installed
   {
-    "williamboman/mason.nvim",
+    "hareki/mason.nvim",
     opts = { ensure_installed = { "gitui" } },
     keys = {
       {

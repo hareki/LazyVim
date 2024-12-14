@@ -6,7 +6,7 @@ return {
     })
   end,
   {
-    "williamboman/mason.nvim",
+    "hareki/mason.nvim",
     opts = { ensure_installed = { "ansible-lint" } },
   },
   {
