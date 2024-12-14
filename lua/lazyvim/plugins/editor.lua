@@ -182,8 +182,6 @@ return {
           mode = { "n", "v" },
           { "<leader><tab>", group = "Tabs" },
           { "<leader>c", group = "Code" },
-          { "<leader>d", group = "Debug" },
-          { "<leader>dp", group = "Profiler" },
           { "<leader>f", group = "File/Find" },
           { "<leader>g", group = "Git" },
           { "<leader>gh", group = "Hunks" },
