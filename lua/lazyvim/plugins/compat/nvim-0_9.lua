@@ -7,8 +7,6 @@ return {
   -- Use nvim-cmp instead of blink.cmp
   { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
 
-  -- Use mini.comment instead of ts-comments
-  { "folke/ts-comments.nvim", enabled = false },
   { import = "lazyvim.plugins.extras.coding.mini-comment" },
 
   -- Use neodev-types with lazydev
