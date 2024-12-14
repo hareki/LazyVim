@@ -76,10 +76,26 @@ return {
       textobjects = {
         move = {
           enable = true,
-          goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer", ["]a"] = "@parameter.inner" },
-          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
-          goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer", ["[a"] = "@parameter.inner" },
-          goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
+          goto_next_start = {
+            ["]f"] = { query = "@function.outer", desc = "Outer function start" },
+            ["]c"] = { query = "@class.outer", desc = "Outer class start" },
+            ["]a"] = { query = "@parameter.inner", desc = "Inner parameter start" },
+          },
+          goto_next_end = {
+            ["]F"] = { query = "@function.outer", desc = "Outer function end" },
+            ["]C"] = { query = "@class.outer", desc = "outer class end" },
+            ["]A"] = { query = "@parameter.inner", desc = "Inner parameter end" },
+          },
+          goto_previous_start = {
+            ["[f"] = { query = "@function.outer", desc = "Outer function start" },
+            ["[c"] = { query = "@class.outer", desc = "Outer class start" },
+            ["[a"] = { query = "@parameter.inner", desc = "Inner parameter start" },
+          },
+          goto_previous_end = {
+            ["[F"] = { query = "@function.outer", desc = "Outer function end" },
+            ["[C"] = { query = "@class.outer", desc = "Outer class end" },
+            ["[A"] = { query = "@parameter.inner", desc = "Inner parameter end" },
+          },
         },
       },
     },
