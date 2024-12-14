@@ -16,15 +16,6 @@ return {
         mason = true,
         markdown = true,
         mini = true,
-        native_lsp = {
-          enabled = true,
-          underlines = {
-            errors = { "undercurl" },
-            hints = { "undercurl" },
-            warnings = { "undercurl" },
-            information = { "undercurl" },
-          },
-        },
         neotree = true,
         noice = true,
         semantic_tokens = true,
