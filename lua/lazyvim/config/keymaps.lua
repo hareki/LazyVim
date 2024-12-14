@@ -28,7 +28,6 @@ map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "[b", "<cmd>bprevious<cr>", { desc = "Buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Buffer" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to other buffer" })
-map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to other buffer" })
 map("n", "<leader>bd", function()
   Snacks.bufdelete()
 end, { desc = "Delete buffer" })
@@ -150,9 +149,6 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 -- highlights under cursor
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect pos" })
 map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect tree" })
-
--- LazyVim Changelog
-map("n", "<leader>L", function() LazyVim.news.changelog() end, { desc = "LazyVim changelog" })
 
 -- floating terminal
 map("n", "<leader>fT", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })

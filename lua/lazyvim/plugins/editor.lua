@@ -19,7 +19,6 @@ return {
         end,
         desc = "Explorer Neo-tree (cwd)",
       },
-      { "<leader>e", "<leader>fe", desc = "Explorer Neo-tree (root dir)", remap = true },
       {
         "<leader>ge",
         function()
@@ -214,22 +213,7 @@ return {
         },
       },
     },
-    keys = {
-      {
-        "<leader>?",
-        function()
-          require("which-key").show({ global = false })
-        end,
-        desc = "Buffer keymaps (which-key)",
-      },
-      {
-        "<c-w><space>",
-        function()
-          require("which-key").show({ keys = "<c-w>", loop = true })
-        end,
-        desc = "Window hydra mode (which-key)",
-      },
-    },
+    keys = {},
     config = function(_, opts)
       local wk = require("which-key")
       wk.setup(opts)
