@@ -10,17 +10,17 @@ return {
         function()
           require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root() })
         end,
-        desc = "Explorer NeoTree (Root Dir)",
+        desc = "Explorer Neo-tree (root dir)",
       },
       {
         "<leader>fE",
         function()
           require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
         end,
-        desc = "Explorer NeoTree (cwd)",
+        desc = "Explorer Neo-tree (cwd)",
       },
-      { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
-      { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
+      { "<leader>e", "<leader>fe", desc = "Explorer Neo-tree (root dir)", remap = true },
+      { "<leader>E", "<leader>fE", desc = "Explorer Neo-tree (cwd)", remap = true },
       {
         "<leader>ge",
         function()
@@ -77,13 +77,13 @@ return {
               local path = node:get_id()
               vim.fn.setreg("+", path, "c")
             end,
-            desc = "Copy Path to Clipboard",
+            desc = "Copy path to clipboard",
           },
           ["O"] = {
             function(state)
               require("lazy.util").open(state.tree:get_node().path, { system = true })
             end,
-            desc = "Open with System Application",
+            desc = "Open with system application",
           },
           ["P"] = { "toggle_preview", config = { use_float = false } },
         },
@@ -145,7 +145,7 @@ return {
           })
         end,
         mode = { "n", "v" },
-        desc = "Search and Replace",
+        desc = "Search and replace",
       },
     },
   },
@@ -164,8 +164,8 @@ return {
       { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
       { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
       { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter search" },
+      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle flash search" },
     },
   },
 
@@ -181,22 +181,22 @@ return {
       spec = {
         {
           mode = { "n", "v" },
-          { "<leader><tab>", group = "tabs" },
-          { "<leader>c", group = "code" },
-          { "<leader>d", group = "debug" },
-          { "<leader>dp", group = "profiler" },
-          { "<leader>f", group = "file/find" },
-          { "<leader>g", group = "git" },
-          { "<leader>gh", group = "hunks" },
-          { "<leader>q", group = "quit/session" },
-          { "<leader>s", group = "search" },
-          { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
-          { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
-          { "[", group = "prev" },
-          { "]", group = "next" },
-          { "g", group = "goto" },
-          { "gs", group = "surround" },
-          { "z", group = "fold" },
+          { "<leader><tab>", group = "Tabs" },
+          { "<leader>c", group = "Code" },
+          { "<leader>d", group = "Debug" },
+          { "<leader>dp", group = "Profiler" },
+          { "<leader>f", group = "File/Find" },
+          { "<leader>g", group = "Git" },
+          { "<leader>gh", group = "Hunks" },
+          { "<leader>q", group = "Quit/Session" },
+          { "<leader>s", group = "Search" },
+          { "<leader>u", group = "UI", icon = { icon = "󰙵 ", color = "cyan" } },
+          { "<leader>x", group = "Diagnostics/Quickfix", icon = { icon = "󱖫 ", color = "green" } },
+          { "[", group = "Previous" },
+          { "]", group = "Next" },
+          { "g", group = "Goto" },
+          { "gs", group = "Surround" },
+          { "z", group = "Fold" },
           {
             "<leader>b",
             group = "buffer",
@@ -223,14 +223,14 @@ return {
         function()
           require("which-key").show({ global = false })
         end,
-        desc = "Buffer Keymaps (which-key)",
+        desc = "Buffer keymaps (which-key)",
       },
       {
         "<c-w><space>",
         function()
           require("which-key").show({ keys = "<c-w>", loop = true })
         end,
-        desc = "Window Hydra Mode (which-key)",
+        desc = "Window hydra mode (which-key)",
       },
     },
     config = function(_, opts)
@@ -243,7 +243,7 @@ return {
     end,
   },
 
-  -- git signs highlights text that has changed since the list
+  -- git signs highlights text that has changed since the last
   -- git commit, and also lets you interactively stage & unstage
   -- hunks in a commit.
   {
@@ -279,27 +279,29 @@ return {
           else
             gs.nav_hunk("next")
           end
-        end, "Next Hunk")
+        end, "Next hunk")
         map("n", "[h", function()
           if vim.wo.diff then
             vim.cmd.normal({ "[c", bang = true })
           else
             gs.nav_hunk("prev")
           end
-        end, "Prev Hunk")
-        map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
-        map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
-        map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
-        map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
-        map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
-        map("n", "<leader>ghu", gs.undo_stage_hunk, "Undo Stage Hunk")
-        map("n", "<leader>ghR", gs.reset_buffer, "Reset Buffer")
-        map("n", "<leader>ghp", gs.preview_hunk_inline, "Preview Hunk Inline")
-        map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
-        map("n", "<leader>ghB", function() gs.blame() end, "Blame Buffer")
-        map("n", "<leader>ghd", gs.diffthis, "Diff This")
-        map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
-        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
+        end, "Previous hunk")
+        map("n", "]H", function() gs.nav_hunk("last") end, "Last hunk")
+        map("n", "[H", function() gs.nav_hunk("first") end, "First hunk")
+        map({ "n" }, "<leader>ghs", gs.stage_hunk, "Stage hunk")
+        map({ "v" }, "<leader>ghs", function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, "Stage hunk")
+        map({ "n" }, "<leader>ghr", gs.reset_hunk, "Reset hunk")
+        map({ "v" }, "<leader>ghr", function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, "Reset hunk")
+        map("n", "<leader>ghS", gs.stage_buffer, "Stage buffer")
+        map("n", "<leader>ghu", gs.undo_stage_hunk, "Undo stage hunk")
+        map("n", "<leader>ghR", gs.reset_buffer, "Reset buffer")
+        map("n", "<leader>ghp", gs.preview_hunk_inline, "Preview hunk inline")
+        map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame line")
+        map("n", "<leader>ghB", function() gs.blame() end, "Blame buffer")
+        map("n", "<leader>ghd", gs.diffthis, "Diff this")
+        map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff this ~")
+        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns select hunk")
       end,
     },
   },
@@ -307,7 +309,7 @@ return {
     "gitsigns.nvim",
     opts = function()
       Snacks.toggle({
-        name = "Git Signs",
+        name = "Git signs",
         get = function()
           return require("gitsigns.config").config.signcolumn
         end,
@@ -331,11 +333,11 @@ return {
     },
     keys = {
       { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
-      { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
+      { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer diagnostics (Trouble)" },
       { "<leader>cs", "<cmd>Trouble symbols toggle<cr>", desc = "Symbols (Trouble)" },
       { "<leader>cS", "<cmd>Trouble lsp toggle<cr>", desc = "LSP references/definitions/... (Trouble)" },
-      { "<leader>xL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
-      { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
+      { "<leader>xL", "<cmd>Trouble loclist toggle<cr>", desc = "Location list (Trouble)" },
+      { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix list (Trouble)" },
       {
         "[q",
         function()
@@ -348,7 +350,7 @@ return {
             end
           end
         end,
-        desc = "Previous Trouble/Quickfix Item",
+        desc = "Trouble/Quickfix item",
       },
       {
         "]q",
@@ -362,12 +364,12 @@ return {
             end
           end
         end,
-        desc = "Next Trouble/Quickfix Item",
+        desc = "Trouble/Quickfix item",
       },
     },
   },
 
-  -- Finds and lists all of the TODO, HACK, BUG, etc comment
+  -- Finds and lists all of the TODO, HACK, BUG, etc comments
   -- in your project and loads them into a browsable list.
   {
     "folke/todo-comments.nvim",
@@ -376,8 +378,8 @@ return {
     opts = {},
     -- stylua: ignore
     keys = {
-      { "]t", function() require("todo-comments").jump_next() end, desc = "Next Todo Comment" },
-      { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous Todo Comment" },
+      { "]t", function() require("todo-comments").jump_next() end, desc = "Todo comment" },
+      { "[t", function() require("todo-comments").jump_prev() end, desc = "Todo comment" },
       { "<leader>xt", "<cmd>Trouble todo toggle<cr>", desc = "Todo (Trouble)" },
       { "<leader>xT", "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
       { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
