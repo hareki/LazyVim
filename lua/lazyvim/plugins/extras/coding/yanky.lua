@@ -18,7 +18,7 @@ return {
         end
       end,
       mode = { "n", "x" },
-      desc = "Open Yank History",
+      desc = "Yank History",
     },
   },
 }
