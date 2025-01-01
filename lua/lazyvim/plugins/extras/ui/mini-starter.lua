@@ -1,7 +1,7 @@
 -- start screen
 return {
   -- disable alpha
-  { "folke/snacks.nvim", opts = { dashboard = { enabled = false } } },
+  { "hareki/snacks.nvim", opts = { dashboard = { enabled = false } } },
 
   -- enable mini.starter
   {
